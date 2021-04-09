@@ -1,6 +1,6 @@
 namespace API.Controllers
 {
-    public class LoginController
+    public class UserController: ControllerBase
     {
         
     }
