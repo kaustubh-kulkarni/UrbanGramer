@@ -1,5 +1,8 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
+using API.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,10 +17,9 @@ namespace API.Controllers
         }
 
         [HttpGet("getUsers")]
-        public async Task<ActionResult> GetUsers()
+        public async Task<IEnumerable<AppUser>> GetUsers()
         {
-            var users = await _context.Users.ToListAsync();
-            return Ok(users);
+            return await _context.Users.ToListAsync();
         }
     }
 }
