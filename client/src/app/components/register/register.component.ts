@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { AccountService } from 'src/app/_services/account.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { AccountService } from 'src/app/_services/account.service';
 })
 export class RegisterComponent implements OnInit {
   data: any;
+  registerToggle: boolean;
 
   constructor(private accountService: AccountService) { }
 
@@ -17,6 +19,13 @@ export class RegisterComponent implements OnInit {
   register()
   {
     console.log("You pressed register button");
+    this.registerToggle = true;
+  }
+
+  cancel()
+  {
+    this.registerToggle = false;
+    RouterLink["/homepage"];
   }
 
 }
