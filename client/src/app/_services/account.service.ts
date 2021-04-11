@@ -5,7 +5,7 @@ import { HttpClient } from'@angular/common/http';
   providedIn: 'root'
 })
 export class AccountService {
-  baseUrl = 'https://localhost:5001/api';
+  baseUrl = 'https://localhost:5001/api/';
 
   constructor(private http: HttpClient) { }
   // Register method to send data to url
@@ -14,6 +14,6 @@ export class AccountService {
   }
   // Login method to get users
   login(data: any){
-    return this.http.get(this.baseUrl + 'account/login', data);
+    return this.http.post(this.baseUrl + 'account/login', data);
   }
 }
