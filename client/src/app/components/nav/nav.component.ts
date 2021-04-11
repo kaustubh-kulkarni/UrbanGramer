@@ -7,6 +7,8 @@ import { AccountService } from 'src/app/_services/account.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
+  data: any = {}
+  loggedIn: boolean;
 
   constructor(private accountService: AccountService) { }
 
@@ -14,7 +16,12 @@ export class NavComponent implements OnInit {
   }
 
   login(){
-    
+    this.accountService.login(this.data).subscribe(response => {
+      console.log(response);
+      this.loggedIn = true;
+    }, error => {
+      console.log(error);
+    })
   }
 
 }
