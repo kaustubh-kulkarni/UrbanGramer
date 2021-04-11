@@ -10,7 +10,6 @@ import { AccountService } from 'src/app/_services/account.service';
 export class NavComponent implements OnInit {
   data: any = {}
 
-
   constructor(public accountService: AccountService, private router: Router) { }
 
   ngOnInit(): void {
