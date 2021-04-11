@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-import { AccountService } from 'src/app/_services/account.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -8,10 +6,11 @@ import { AccountService } from 'src/app/_services/account.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  data: any;
-  registerToggle: boolean;
+  @Input() usersFromHomeComponent: any;
+  @Output() cancelRegister = new EventEmitter();
+  data: any = {};
 
-  constructor(private accountService: AccountService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -19,13 +18,11 @@ export class RegisterComponent implements OnInit {
   register()
   {
     console.log("You pressed register button");
-    this.registerToggle = true;
   }
 
   cancel()
   {
-    this.registerToggle = false;
-    RouterLink["/homepage"];
+    this.cancelRegister.emit(false);
   }
 
 }
