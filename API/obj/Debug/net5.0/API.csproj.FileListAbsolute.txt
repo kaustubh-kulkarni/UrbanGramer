@@ -36,3 +36,7 @@ D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Npgsql.dll
 D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Humanizer.dll
 D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
