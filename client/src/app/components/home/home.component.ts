@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
-    this.setCurrentUser();
   }
 
   registerToggle(){
@@ -25,11 +24,6 @@ export class HomeComponent implements OnInit {
 
   cancelRegisterMode(event: boolean){
     this.registerMode = event;
-  }
-
-  setCurrentUser(){
-    const user: User = JSON.parse(localStorage.getItem('user'));
-    this.accountService.setCurrentUser(user);
   }
 
   getUsers(){
