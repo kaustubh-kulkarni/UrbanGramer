@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/_models/user';
+import { AccountService } from 'src/app/_services/account.service';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +12,11 @@ export class HomeComponent implements OnInit {
   registerMode = false;
   users: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private accountService: AccountService) { }
 
   ngOnInit(): void {
     this.getUsers();
+    this.setCurrentUser();
   }
 
   registerToggle(){
@@ -22,6 +25,11 @@ export class HomeComponent implements OnInit {
 
   cancelRegisterMode(event: boolean){
     this.registerMode = event;
+  }
+
+  setCurrentUser(){
+    const user: User = JSON.parse(localStorage.getItem('user'));
+    this.accountService.setCurrentUser(user);
   }
 
   getUsers(){
