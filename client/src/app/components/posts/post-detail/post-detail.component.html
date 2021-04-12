@@ -1,1 +1,20 @@
-<h1 *ngIf="post">{{post.title}}</h1>
+<div class="row" *ngIf="post">
+    <div class="col-8 offset-2">
+        <div class="card text-center">
+            <h4>{{post.title}}</h4>
+            <div class="card-body">
+                <div>
+                    <strong>Content</strong>
+                    <p>{{post.content}}</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <p>Created on {{post.created}}</p>
+                <div class="btn-group d-flex">
+                    <button class="btn btn-primary">Like</button>
+                    <button class="btn btn-success">Comment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
