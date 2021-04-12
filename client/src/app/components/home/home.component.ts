@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/_models/user';
 import { AccountService } from 'src/app/_services/account.service';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-home',
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   getUsers(){
-    this.http.get('https://localhost:5001/api/Users').subscribe(users => this.users = users);
+    this.http.get('https://localhost:5001/api/users').subscribe(users => this.users = users);
   }
 
 }
