@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostListComponent } from './components/posts/post-list/post-list.component';
 import { PostDetailComponent } from './components/posts/post-detail/post-detail.component';
 import { ToastrModule } from 'ngx-toastr';
+import { PostCardComponent } from './components/posts/post-card/post-card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ToastrModule } from 'ngx-toastr';
     HomeComponent,
     RegisterComponent,
     PostListComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    PostCardComponent
   ],
   imports: [
     BrowserModule,
