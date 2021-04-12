@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Post } from 'src/app/_models/post';
+import { PostService } from 'src/app/_services/post.service';
 
 @Component({
   selector: 'app-post-detail',
@@ -6,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent implements OnInit {
+  post: Post;
 
-  constructor() { }
+  constructor(private postService: PostService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.loadPost();
+  }
+
+  loadPost(){
+    this.postService.getPost(this.route.snapshot.paramMap.get('username')).subscribe(post => {
+      this.post = post;
+    })
   }
 
 }
