@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/_models/user';
+import { CommunityService } from 'src/app/_services/community.service';
 
 @Component({
   selector: 'app-community',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./community.component.css']
 })
 export class CommunityComponent implements OnInit {
+  users: any
 
-  constructor() { }
+  constructor(private communityService: CommunityService) { }
 
   ngOnInit(): void {
+    this.loadUsers();
   }
+
+  loadUsers(){
+    this.communityService.getUsers().subscribe(res => {
+      this.users = res;
+    })
+  }
+
 
 }

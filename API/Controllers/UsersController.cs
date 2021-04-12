@@ -27,7 +27,7 @@ namespace API.Controllers
             return await _context.Users.ToListAsync();
         }
         [HttpGet("{username}")]
-        public async Task<ActionResult<AppUser>> GetUserById(string username)
+        public async Task<ActionResult<AppUser>> GetUserByUsername(string username)
         {
             return await _context.Users.FindAsync(username);
         }
