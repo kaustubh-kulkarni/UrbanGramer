@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CommunityComponent } from './components/community/community.component';
 import { HomeComponent } from './components/home/home.component';
 import { PostDetailComponent } from './components/posts/post-detail/post-detail.component';
 import { PostListComponent } from './components/posts/post-list/post-list.component';
@@ -12,8 +13,9 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      {path: 'posts', component: PostListComponent, canActivate: [AuthGuard]},
+      {path: 'posts', component: PostListComponent},
       {path: 'posts/:id', component: PostDetailComponent},
+      {path: 'community', component: CommunityComponent},
       {path: '**', component: HomeComponent, pathMatch: "full"}
     ]
   }
