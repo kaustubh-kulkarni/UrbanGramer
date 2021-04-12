@@ -1,5 +1,5 @@
-<div class="container mt-5">
-    <carousel class="carousel">
+<div class="container carousel">
+    <carousel [isAnimated]="true">
         <slide>
             <img src="../../../assets/karsten-winegeart-l24eJZ9cIQk-unsplash.jpg" width="1080" height="400" alt="first slide">
         </slide>
@@ -10,6 +10,8 @@
             <img src="../../../assets/damien-schnorhk-fVBWN3_ST0E-unsplash.jpg" width="1080" height="400" alt="third slide">
         </slide>
     </carousel>
+</div>
+<div class="container mt-4">
     <div *ngIf="!registerMode" style="text-align: center;">
         <h1>UrbanGramer</h1>
         <p class="lead">Welcome to the official page of UrbanGramer!</p>
