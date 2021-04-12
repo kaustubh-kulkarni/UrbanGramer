@@ -29,7 +29,7 @@ namespace API.Controllers
         [HttpGet("{username}")]
         public async Task<ActionResult<AppUser>> GetUserByUsername(string username)
         {
-            return await _context.Users.FindAsync(username);
+            return await _context.Users.Where(x => x.Username == username).SingleOrDefaultAsync();
         }
     }
 }

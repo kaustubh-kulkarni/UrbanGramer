@@ -2,9 +2,10 @@
     <div class="col-2" *ngFor="let user of users">
         <div class="card mb-4">
             <div class="card-img-wrapper">
-                <ul class="list-inline animate text-center">
+                <img src="{{user.image}}" alt="{{user.username}" class="card-img-top">
+                <ul class="list-inline user-icons animate text-center">
                     <li class="list-inline-item"><button class="btn btn-primary" routerLink='/users/{{user.username}}'><i class="fa fa-user"></i></button></li>
-                    <li class="list-inline-item"><button class="btn btn-primary"><i class="fa fa-envelope"></i></button></li>
+                    <li class="list-inline-item"><button class="btn btn-danger"><i class="fa fa-envelope"></i></button></li>
                 </ul>
             </div>
             <div class="card-body p-1">
