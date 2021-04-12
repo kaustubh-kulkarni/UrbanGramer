@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace API.Entities
 {
@@ -13,6 +14,7 @@ namespace API.Entities
         public DateTime Created { get; set; } = DateTime.Now;
         public string  City { get; set; }
         public string Country { get; set; }
+        public ICollection<Post> Posts { get; set; }
 
     }
 }
