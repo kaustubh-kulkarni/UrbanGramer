@@ -1,0 +1,61 @@
+[{
+        "Username": "Hubbard",
+        "DateOfBirth": "1978-04-25",
+        "Created": "2020-02-08",
+        "City": "Kansas",
+        "Country": "Venezuela",
+        "Posts": [{
+            "Title": "New Post",
+            "Content": "Here will be the content",
+            "Created": "2019-06-30"
+        }]
+    },
+    {
+        "Username": "Benson",
+        "DateOfBirth": "1993-09-18",
+        "Created": "2019-06-05",
+        "City": "Kent",
+        "Country": "Bahrain",
+        "Posts": [{
+            "Title": "New Post",
+            "Content": "Here will be the content",
+            "Created": "2020-04-11"
+        }]
+    },
+    {
+        "Username": "Morris",
+        "DateOfBirth": "1958-07-02",
+        "Created": "2019-02-03",
+        "City": "Chelsea",
+        "Country": "Kyrgyzstan",
+        "Posts": [{
+            "Title": "New Post",
+            "Content": "Here will be the content",
+            "Created": "2020-05-08"
+        }]
+    },
+    {
+        "Username": "Wise",
+        "DateOfBirth": "1976-06-10",
+        "Created": "2019-08-08",
+        "City": "Boomer",
+        "Country": "Bhutan",
+        "Posts": [{
+            "Title": "New Post",
+            "Content": "Here will be the content",
+            "Created": "2019-05-27"
+        }]
+    },
+    {
+        "Username": "Beach",
+        "DateOfBirth": "1983-10-22",
+        "Created": "2020-04-06",
+        "City": "Kimmell",
+        "Country": "Uzbekistan",
+        "Posts": [{
+            "Title": "New Post",
+            "Content": "Here will be the content",
+            "Created": "2019-01-06"
+        }]
+    }
+]

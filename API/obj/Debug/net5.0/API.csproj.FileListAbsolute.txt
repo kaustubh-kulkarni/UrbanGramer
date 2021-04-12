@@ -43,3 +43,4 @@ D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\System.IdentityModel.Tok
 D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Data\UserSeedData.json
