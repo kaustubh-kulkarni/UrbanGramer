@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PostListComponent } from './components/posts/post-list/post-list.component';
 import { PostDetailComponent } from './components/posts/post-detail/post-detail.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,10 @@ import { PostDetailComponent } from './components/posts/post-detail/post-detail.
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-center'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
