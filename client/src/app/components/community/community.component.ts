@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/_models/user';
 import { CommunityService } from 'src/app/_services/community.service';
 
 @Component({
