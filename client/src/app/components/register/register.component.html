@@ -7,6 +7,15 @@
     <div class="form-group">
         <input class="form-control mb-2" type="password" name="password" [(ngModel)]="data.password" placeholder="Password" required>
     </div>
+    <div class="form-group">
+        <input class="form-control mb-2" type="email" name="email" [(ngModel)]="data.email" placeholder="Email" required>
+    </div>
+    <div class="form-group">
+        <input class="form-control mb-2" type="text" name="city" [(ngModel)]="data.city" placeholder="City" required>
+    </div>
+    <div class="form-group">
+        <input class="form-control mb-2" type="text" name="country" [(ngModel)]="data.country" placeholder="Country" required>
+    </div>
     <div class="form-group text-center">
         <button class="btn btn-success mr-2" type="submit">Register</button>
         <button class="btn btn-danger" (click)="cancel()" type="button">Cancel</button>
