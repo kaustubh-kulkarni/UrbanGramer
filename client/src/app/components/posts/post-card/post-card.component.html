@@ -2,7 +2,9 @@
     <div class="card-body p-1">
         <h5 class="card-header text-center">{{post.title}}</h5>
         <p class="card-text">{{post.content}}</p>
-        <a routerLink='/posts/{{post.id}}' class="btn btn-primary">Read More</a>
-        <footer class="blockquote-footer">Post created on <cite title="Source Title">{{post.created}}</cite></footer>
+        <a routerLink='/posts/{{post.id}}' class="btn btn-primary ml-4">Read More</a>
+        <ul class="list-inline user-icons animate text-center mt-3">
+            <li class="list-inline-item"><button class="btn btn-info" routerLink='/posts/{{post.id}}'><i class="fa fa-plus"></i></button></li>
+        </ul>
     </div>
 </div>
