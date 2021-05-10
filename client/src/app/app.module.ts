@@ -16,6 +16,7 @@ import { PostDetailComponent } from './components/posts/post-detail/post-detail.
 import { ToastrModule } from 'ngx-toastr';
 import { PostCardComponent } from './components/posts/post-card/post-card.component';
 import { CommunityComponent } from './components/community/community.component';
+import { PostCreateComponent } from './components/posts/post-create/post-create.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CommunityComponent } from './components/community/community.component';
     PostListComponent,
     PostDetailComponent,
     PostCardComponent,
-    CommunityComponent
+    CommunityComponent,
+    PostCreateComponent
   ],
   imports: [
     BrowserModule,
