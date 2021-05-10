@@ -1,1 +1,11 @@
-<p>post-create works!</p>
+<form [formGroup]="postCreateForm" autocomplete="off" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label>Title: <input type="text" formControlName="title"></label>
+    </div>
+    <div class="form-control">
+        <label>Content: <textarea formControlName="content"></textarea></label>
+    </div>
+    <div class="form-control">
+        <button type="submit" [disabled]="!postCreateForm.valid">Submit</button>
+    </div>
+</form>

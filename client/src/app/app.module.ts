@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PostListComponent } from './components/posts/post-list/post-list.component';
 import { PostDetailComponent } from './components/posts/post-detail/post-detail.component';
@@ -34,6 +34,7 @@ import { PostCreateComponent } from './components/posts/post-create/post-create.
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
