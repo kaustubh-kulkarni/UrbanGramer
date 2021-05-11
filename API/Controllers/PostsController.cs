@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 using API.Data;
 using API.Dtos;
 using API.Entities;
+using API.Extensions;
+using API.Interfaces;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +25,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async  Task<ActionResult<IEnumerable<Post>>> GetPost()
+        public async Task<ActionResult<IEnumerable<Post>>> GetPost()
         {
             return await _context.Posts.ToListAsync();
         }
@@ -32,6 +35,7 @@ namespace API.Controllers
         {
             return await _context.Posts.FindAsync(id);
         }
+
 
     }
 }

@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using API.Extensions;
+using AutoMapper;
 
 namespace API.Controllers
 {
@@ -18,12 +19,16 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly IUserRepository _userRepository;
         private readonly DataContext _context;
-        public UsersController(DataContext context, IUserRepository userRepository)
+        private readonly IUserRepository _userRepository;
+        private readonly IPostRepository _postRepository;
+        private readonly IMapper _mapper;
+        public UsersController(DataContext context, IUserRepository userRepository, IPostRepository postRepository, IMapper mapper)
         {
-            _context = context;
+            _mapper = mapper;
+            _postRepository = postRepository;
             _userRepository = userRepository;
+            _context = context;
         }
 
 
@@ -32,36 +37,31 @@ namespace API.Controllers
         {
             return await _context.Users.ToListAsync();
         }
-        [HttpGet("{username}")]
-        public async Task<ActionResult<AppUser>> GetUserByUsernameAsync(string username)
+        [HttpGet("{username}", Name = "GetUser")]
+        public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
-            return await _context.Users.Include(p => p.Posts).SingleOrDefaultAsync(x => x.Username == username);
+            return await _userRepository.GetMemberAsync(username);
         }
 
         [HttpPost("add-post")]
-        public async Task<ActionResult<UserDto>> AddPost(PostDto postDto)
+        public async Task<ActionResult<PostDto>> CreatePost(PostCreateDto postCreateDto)
         {
-            var username = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
-
+    
             var post = new Post
             {
-                Id = postDto.Id,
-                Title = postDto.Title,
-                Content = postDto.Content
+                Title = postCreateDto.Title,
+                Content = postCreateDto.Content,
             };
 
-            username.Posts.Add(post);
+            _postRepository.AddPost(post);
+            await _postRepository.SaveAllAsync();
 
-            if (await _userRepository.SaveAllAsync())
+            return new PostDto
             {
-                return Ok(postDto);
-            }
-  
-            return Ok(200);
-
-            
-        }
-
+                Title = post.Title,
+                Content = post.Content
+            };
+        }      
 
     }
 }

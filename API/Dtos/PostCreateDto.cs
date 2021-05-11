@@ -2,10 +2,10 @@ using System;
 
 namespace API.Dtos
 {
-    public class PostDto
+    public class PostCreateDto
     {
         public string Title { get; set; }
         public string Content { get; set; }
-        
+        public DateTime Created {get; set;}
     }
 }

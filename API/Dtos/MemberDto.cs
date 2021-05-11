@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using API.Entities;
 
-namespace API.Entities
+namespace API.Dtos
 {
-    public class AppUser
+    public class MemberDto
     {
         public int Id { get; set; }
         public string Username { get; set; }
@@ -15,6 +16,7 @@ namespace API.Entities
         public string  City { get; set; }
         public string Country { get; set; }
         public string Image { get; set; }
+        public ICollection<Post> Posts { get; set; }
 
     }
 }
