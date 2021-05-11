@@ -1,0 +1,8 @@
+/* Text truncation */
+
+h5,
+p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
