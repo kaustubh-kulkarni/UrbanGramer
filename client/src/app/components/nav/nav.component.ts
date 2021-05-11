@@ -11,7 +11,7 @@ import { AccountService } from 'src/app/_services/account.service';
 export class NavComponent implements OnInit {
   data: any = {}
 
-  constructor(public accountService: AccountService, private router: Router, private toasterService: ToastrService) { }
+  constructor(public accountService: AccountService, private router: Router, private toastrService: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +21,7 @@ export class NavComponent implements OnInit {
       this.router.navigateByUrl('/posts');
     }, error => {
       console.log(error);
-      this.toasterService.error(error.error);
+      this.toastrService.error(error.error);
     })
   }
 

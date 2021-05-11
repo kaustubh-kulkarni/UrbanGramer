@@ -23,5 +23,10 @@ export class PostService {
   getPost(username: string){
     return this.http.get<Post>(this.baseUrl + 'posts/' + username, httpOptions);
   }
+
+  // Add post
+  addPost(data : {title: string, content: string}){
+    return this.http.post(this.baseUrl + 'users/add-post', data, httpOptions);
+  }
 }
 
