@@ -44,3 +44,5 @@ D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Microsoft.AspNetCore.Aut
 D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\angular_projects\UrbanGramerApp\API\bin\Debug\net5.0\Data\UserSeedData.json
+D:\angular_projects\UrbanGramerApp\api\bin\Debug\net5.0\AutoMapper.dll
+D:\angular_projects\UrbanGramerApp\api\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

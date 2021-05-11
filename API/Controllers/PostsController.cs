@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
 using API.Dtos;
@@ -32,30 +33,5 @@ namespace API.Controllers
             return await _context.Posts.FindAsync(id);
         }
 
-        [HttpPost("create")]
-        public async Task<ActionResult<PostDto>> AddPost(PostCreateDto postCreateDto)
-        {
-            if (await PostExists(postCreateDto.Id)) return BadRequest("Post already exists!");
-           var post = new Post
-           {
-               Title = postCreateDto.Title,
-               Content = postCreateDto.Content
-           };
-
-            _context.Posts.Add(post);
-            await _context.SaveChangesAsync();
-
-            return new PostDto{
-                Title = post.Title,
-                Content = post.Content
-            };
-
-        }
-
-        // Method to check whether the post exists or not
-        private async Task<bool> PostExists(int id)
-        {
-            return await _context.Posts.AnyAsync(x => x.Id == id);
-        }
     }
 }

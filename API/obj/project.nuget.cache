@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "vbE238cg4xm1UFu0l9ZPAr4d2crTcwqpX4l8xWq44eN75QkvonKYTRwhP7sclIi51JQg8AtcYiKQ8nyJxrCQ4w==",
+  "dgSpecHash": "jx0qjBxNJxJQ43jxC1OGA9ffmHs6fjlFfhLmHzQ9ulxQTD/0Iam7vUhIi+/PsqDAknbBo/a5OFbH95tGylMA4Q==",
   "success": true,
-  "projectFilePath": "D:\\angular_projects\\UrbanGramerApp\\API\\API.csproj",
+  "projectFilePath": "D:\\angular_projects\\UrbanGramerApp\\api\\API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kulka\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\kulka\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\kulka\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kulka\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.5\\microsoft.aspnetcore.authentication.jwtbearer.5.0.5.nupkg.sha512",
     "C:\\Users\\kulka\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -38,6 +40,7 @@
     "C:\\Users\\kulka\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\kulka\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
     "C:\\Users\\kulka\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.10.0\\system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",
+    "C:\\Users\\kulka\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\kulka\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
     "C:\\Users\\kulka\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],

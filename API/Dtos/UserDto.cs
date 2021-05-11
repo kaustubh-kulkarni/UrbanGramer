@@ -4,5 +4,7 @@ namespace API.Dtos
     {
         public string Username { get; set; }
         public string Token { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
     }
 }

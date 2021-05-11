@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\angular_projects\\UrbanGramerApp\\API\\API.csproj": {}
+    "D:\\angular_projects\\UrbanGramerApp\\api\\API.csproj": {}
   },
   "projects": {
-    "D:\\angular_projects\\UrbanGramerApp\\API\\API.csproj": {
+    "D:\\angular_projects\\UrbanGramerApp\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\angular_projects\\UrbanGramerApp\\API\\API.csproj",
+        "projectUniqueName": "D:\\angular_projects\\UrbanGramerApp\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\angular_projects\\UrbanGramerApp\\API\\API.csproj",
+        "projectPath": "D:\\angular_projects\\UrbanGramerApp\\api\\API.csproj",
         "packagesPath": "C:\\Users\\kulka\\.nuget\\packages\\",
-        "outputPath": "D:\\angular_projects\\UrbanGramerApp\\API\\obj\\",
+        "outputPath": "D:\\angular_projects\\UrbanGramerApp\\api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[5.0.5, )"
