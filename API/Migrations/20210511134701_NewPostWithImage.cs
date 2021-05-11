@@ -2,7 +2,7 @@
 
 namespace API.Migrations
 {
-    public partial class NewPostUser : Migration
+    public partial class NewPostWithImage : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,10 +17,20 @@ namespace API.Migrations
             migrationBuilder.DropColumn(
                 name: "AppUserId",
                 table: "Posts");
+
+            migrationBuilder.AddColumn<string>(
+                name: "Photo",
+                table: "Posts",
+                type: "text",
+                nullable: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropColumn(
+                name: "Photo",
+                table: "Posts");
+
             migrationBuilder.AddColumn<int>(
                 name: "AppUserId",
                 table: "Posts",

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AccountService } from 'src/app/_services/account.service';
 import { PostService } from 'src/app/_services/post.service';
 
 @Component({
@@ -10,21 +11,26 @@ import { PostService } from 'src/app/_services/post.service';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
+
   data: any = {};
   postCreateForm: FormGroup;
  
 
-  constructor(private postService: PostService, private router: Router, private toastrService: ToastrService, private fb: FormBuilder) { }
+  constructor(private accountService: AccountService, private postService: PostService, private router: Router, private toastrService: ToastrService, private fb: FormBuilder) {
+
+   }
 
   ngOnInit(): void {
     this.initializeForm();
   }
 
+
   // Initialize the form
   initializeForm(){
     this.postCreateForm = this.fb.group({
       title : ["", Validators.required],
-      content : ["", Validators.required]
+      content : ["", Validators.required],
+      file : [""]
     });
   }
   
@@ -35,6 +41,7 @@ export class PostCreateComponent implements OnInit {
     }, error => {
       this.toastrService.error(error.error);
     });
+    console.log(this.postCreateForm.value);
   }
 
 }

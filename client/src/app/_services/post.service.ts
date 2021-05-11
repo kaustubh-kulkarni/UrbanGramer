@@ -25,7 +25,7 @@ export class PostService {
   }
 
   // Add post
-  addPost(data : {title: string, content: string}){
+  addPost(data : {title: string, content: string, photo: []}){
     return this.http.post(this.baseUrl + 'users/add-post', data, httpOptions);
   }
 }
