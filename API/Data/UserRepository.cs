@@ -33,7 +33,7 @@ namespace API.Data
 
         public async Task<AppUser> GetUserByUsernameAsync(string username)
         {
-            return await _context.Users.SingleOrDefaultAsync(x => x.Username == username);
+            return await _context.Users.Include(p => p.Posts).SingleOrDefaultAsync(x => x.Username == username);
         }
 
         public async Task<bool> SaveAllAsync()

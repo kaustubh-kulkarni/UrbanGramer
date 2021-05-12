@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace API.Entities
 {
@@ -8,7 +9,8 @@ namespace API.Entities
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime Created { get; set; } = DateTime.Now;
-        public string Photo { get; set; }
+        public AppUser AppUser { get; set; }
+        public int AppUserId { get; set; }
 
     }
 }

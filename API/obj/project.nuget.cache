@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jx0qjBxNJxJQ43jxC1OGA9ffmHs6fjlFfhLmHzQ9ulxQTD/0Iam7vUhIi+/PsqDAknbBo/a5OFbH95tGylMA4Q==",
+  "dgSpecHash": "W6hnSKiMSTSNOejJF89JMGWqdzini6xHRDYb+2E77Pu9Iijcc56qK/Yj0T5KbfwfgyOQEOiFORqk6gTfxzWWlg==",
   "success": true,
-  "projectFilePath": "D:\\angular_projects\\UrbanGramerApp\\api\\API.csproj",
+  "projectFilePath": "D:\\angular_projects\\UrbanGramerApp\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kulka\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\kulka\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

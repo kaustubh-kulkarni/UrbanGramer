@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\angular_projects\\UrbanGramerApp\\api\\API.csproj": {}
+    "D:\\angular_projects\\UrbanGramerApp\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\angular_projects\\UrbanGramerApp\\api\\API.csproj": {
+    "D:\\angular_projects\\UrbanGramerApp\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\angular_projects\\UrbanGramerApp\\api\\API.csproj",
+        "projectUniqueName": "D:\\angular_projects\\UrbanGramerApp\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\angular_projects\\UrbanGramerApp\\api\\API.csproj",
+        "projectPath": "D:\\angular_projects\\UrbanGramerApp\\API\\API.csproj",
         "packagesPath": "C:\\Users\\kulka\\.nuget\\packages\\",
-        "outputPath": "D:\\angular_projects\\UrbanGramerApp\\api\\obj\\",
+        "outputPath": "D:\\angular_projects\\UrbanGramerApp\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -18,10 +18,17 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class PostsController : ControllerBase
     {
+        
+        private readonly IUserRepository _userRepository;
+        private readonly IPostRepository _postRepository;
+        private readonly IMapper _mapper;
         private readonly DataContext _context;
-        public PostsController(DataContext context)
+        public PostsController(DataContext context, IUserRepository userRepository, IPostRepository postRepository, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
+            _postRepository = postRepository;
+            _userRepository = userRepository;
         }
 
         [HttpGet]
@@ -35,6 +42,29 @@ namespace API.Controllers
         {
             return await _context.Posts.FindAsync(id);
         }
+
+        [HttpPost("add-post")]
+        public async Task<ActionResult<PostDto>> CreatePost(PostCreateDto postCreateDto)
+        {
+            var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
+
+            var post = new Post
+            {
+                Title = postCreateDto.Title,
+                Content = postCreateDto.Content
+            };
+
+            user.Posts.Add(post);
+
+            if (await _userRepository.SaveAllAsync()){
+                return Ok("Post added successfully!");
+            };
+
+            return BadRequest("Cannot post!");
+
+            
+
+        }      
 
 
     }

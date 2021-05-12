@@ -21,12 +21,10 @@ namespace API.Controllers
     {
         private readonly DataContext _context;
         private readonly IUserRepository _userRepository;
-        private readonly IPostRepository _postRepository;
         private readonly IMapper _mapper;
         public UsersController(DataContext context, IUserRepository userRepository, IPostRepository postRepository, IMapper mapper)
         {
             _mapper = mapper;
-            _postRepository = postRepository;
             _userRepository = userRepository;
             _context = context;
         }
@@ -43,25 +41,6 @@ namespace API.Controllers
             return await _userRepository.GetMemberAsync(username);
         }
 
-        [HttpPost("add-post")]
-        public async Task<ActionResult<PostDto>> CreatePost(PostCreateDto postCreateDto)
-        {
-    
-            var post = new Post
-            {
-                Title = postCreateDto.Title,
-                Content = postCreateDto.Content,
-            };
-
-            _postRepository.AddPost(post);
-            await _postRepository.SaveAllAsync();
-
-            return new PostDto
-            {
-                Title = post.Title,
-                Content = post.Content
-            };
-        }      
 
     }
 }
