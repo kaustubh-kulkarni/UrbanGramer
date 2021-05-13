@@ -7,7 +7,7 @@ namespace API.Interfaces
     {
         void AddPost(Post post);
         void DeletePost(Post post);
-        Task<Post> GetPost(int id);
+        Task<Post> GetPosts(int id);
         Task<bool> SaveAllAsync();
     }
 }
