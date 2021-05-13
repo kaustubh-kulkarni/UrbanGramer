@@ -56,9 +56,7 @@ namespace API.Controllers
 
             user.Posts.Add(post);
 
-            if (await _userRepository.SaveAllAsync()){
-                return Ok("Post added successfully!");
-            };
+            if (await _userRepository.SaveAllAsync()) return Ok();
 
             return BadRequest("Cannot post!");
 

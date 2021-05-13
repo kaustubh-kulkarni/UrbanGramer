@@ -11,8 +11,6 @@ import { PostService } from 'src/app/_services/post.service';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
-
-  data: any = {};
   postCreateForm: FormGroup;
  
 
@@ -30,7 +28,6 @@ export class PostCreateComponent implements OnInit {
     this.postCreateForm = this.fb.group({
       title : ["", Validators.required],
       content : ["", Validators.required],
-      file : [""]
     });
   }
   
@@ -39,6 +36,7 @@ export class PostCreateComponent implements OnInit {
     this.postService.addPost(this.postCreateForm.value).subscribe(res => {
       this.router.navigateByUrl('/posts');
     }, error => {
+      console.log(error);
       this.toastrService.error(error.error);
     });
     console.log(this.postCreateForm.value);
