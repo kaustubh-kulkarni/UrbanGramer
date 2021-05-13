@@ -9,8 +9,6 @@ namespace API.Dtos
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime Created { get; set; } = DateTime.Now;
-        public AppUser AppUser { get; set; }
-        public int AppUserId { get; set; }
  
         
     }

@@ -16,7 +16,7 @@ namespace API.Dtos
         public string  City { get; set; }
         public string Country { get; set; }
         public string Image { get; set; }
-        public ICollection<Post> Posts { get; set; }
+        public ICollection<PostDto> Posts { get; set; }
 
     }
 }

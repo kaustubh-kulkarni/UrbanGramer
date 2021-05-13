@@ -37,10 +37,18 @@ namespace API.Controllers
             return await _context.Posts.ToListAsync();
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Post>> GetPostById(int id)
+        // [HttpGet("{id}")]
+        // public async Task<ActionResult<Post>> GetPostById(int id)
+        // {
+        //     return await _context.Posts.FindAsync(id);
+        // }
+
+        [HttpGet("{username}")]
+        public async Task<ActionResult<Post>> GetPostsByUsername(string username)
         {
-            return await _context.Posts.FindAsync(id);
+            var user = await _userRepository.GetMemberAsync(username);
+
+            return await _postRepository.GetPosts(user.Id);
         }
 
         [HttpPost("add-post")]

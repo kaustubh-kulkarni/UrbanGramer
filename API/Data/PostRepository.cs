@@ -22,6 +22,7 @@ namespace API.Data
             _context.Posts.Remove(post);
         }
 
+
         public async Task<Post> GetPosts(int id)
         {
             return await _context.Posts.FindAsync(id);
