@@ -13,20 +13,22 @@ const httpOptions={
 })
 export class PostService {
   baseUrl = 'https://localhost:5001/api/';
+  post: Post[];
 
   constructor(private http: HttpClient) { }
   // All the posts
   getPosts() {
-    return this.http.get<Post[]>(this.baseUrl + 'posts', httpOptions);
+    return this.http.get<Post>(this.baseUrl + 'posts', httpOptions);
   }
-  // Post by particular user
-  getPost(username: string){
-    return this.http.get<Post>(this.baseUrl + 'posts/' + username, httpOptions);
+  
+  // Get post by specific id
+  getPostById(id: any) {
+    return this.http.get<Post>(this.baseUrl + 'posts/' + id, httpOptions);
   }
 
   // Add post
   addPost(data : any){
-    return this.http.post(this.baseUrl + 'posts/add-post', data, httpOptions);
+    return this.http.post<Post>(this.baseUrl + 'posts/add-post', data, httpOptions);
   }
 }
 

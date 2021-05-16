@@ -3,6 +3,7 @@ import { take } from 'rxjs/operators';
 import { Post } from 'src/app/_models/post';
 import { User } from 'src/app/_models/user';
 import { AccountService } from 'src/app/_services/account.service';
+import { CommunityService } from 'src/app/_services/community.service';
 import { PostService } from 'src/app/_services/post.service';
 
 @Component({
@@ -12,8 +13,8 @@ import { PostService } from 'src/app/_services/post.service';
 })
 export class PostEditComponent implements OnInit {
   user: User;
-  post: Post;
-  constructor(private accountService: AccountService ,private postService: PostService) {
+  posts: any;
+  constructor(private accountService: AccountService ,private postService: PostService, private communityService: CommunityService) {
     this.accountService.currentUser$.pipe(take(1)).subscribe(user =>this.user = user);
    }
 
@@ -22,9 +23,9 @@ export class PostEditComponent implements OnInit {
   }
 
   loadUserPosts(){
-    this.postService.getPost(this.user.username).subscribe(res => {
-      this.post = res;
-    })
+   this.communityService.getPostsByMember(this.user.username).subscribe(response => {
+      this.posts = response.posts;
+   });
   }
 
 }

@@ -16,7 +16,7 @@ export class CommunityComponent implements OnInit {
   }
 
   loadUsers(){
-    this.communityService.getUsers().subscribe(res => {
+    this.communityService.getMembers().subscribe(res => {
       this.users = res;
     })
   }

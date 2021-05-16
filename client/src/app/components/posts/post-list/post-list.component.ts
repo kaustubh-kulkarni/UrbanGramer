@@ -8,7 +8,7 @@ import { PostService } from 'src/app/_services/post.service';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  posts: Post[];
+  posts: Post;
 
   constructor(private postService: PostService) { }
 
@@ -17,9 +17,9 @@ export class PostListComponent implements OnInit {
   }
 
   loadPosts(){
-    this.postService.getPosts().subscribe(posts => {
-      this.posts = posts;
-    })
+    this.postService.getPosts().subscribe(res => {
+      this.posts = res;
+    });
   }
 
 }

@@ -1,15 +1,8 @@
-<div class="row" *ngIf="post">
-    <div class="">
-        <h1>Your Posts</h1>
+<div class="row" *ngIf="posts">
+    <div *ngFor="let post of posts" class="col-4">
+        <app-post-card [post]='post'></app-post-card>
     </div>
-    <div class="col-12">
-        <div class="card mb-4">
-            <h5 class="card-header">{{post.title}}</h5>
-            <div class="card-body">
-                <h6 class="card-title">{{post.created | date}}</h6>
-                <p class="card-text">{{post.content}}</p>
-                <a routerLink='/posts/{{post.id}}' class="btn btn-primary ml-4">Read More</a>
-            </div>
-        </div>
-    </div>
+</div>
+<div *ngIf="!posts">
+    <h1>You dont have any posts as of now</h1>
 </div>
