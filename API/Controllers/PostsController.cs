@@ -60,6 +60,22 @@ namespace API.Controllers
 
             return BadRequest("Cannot post!");
 
+        }
+
+        [HttpDelete("delete-post/{postId}")]
+        public async Task<ActionResult<Post>> DeletePost(int postId)
+        {
+            var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
+
+            var post = user.Posts.FirstOrDefault(x => x.Id == postId);
+
+            if (post == null) return NotFound();
+
+            user.Posts.Remove(post);
+
+            if(await _userRepository.SaveAllAsync()) return Ok();
+
+            return BadRequest("Failed to delete the post");
         }      
 
 
