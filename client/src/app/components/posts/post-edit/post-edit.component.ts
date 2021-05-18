@@ -15,7 +15,7 @@ import { PostService } from 'src/app/_services/post.service';
 export class PostEditComponent implements OnInit {
   member: Member;
   user: User;
-  posts: Post;
+  posts: any;
   
 
   constructor(private accountService: AccountService ,private postService: PostService, private communityService: CommunityService) {
@@ -27,8 +27,10 @@ export class PostEditComponent implements OnInit {
   }
 
   loadUserPosts(){
-   this.communityService.getPostsByMember(this.user.username).subscribe(response => {
+   this.communityService.getMember(this.user.username).subscribe(response => {
       this.member = response;
+      console.log(this.member);
+      console.log(this.member.posts);
    });
   }
 

@@ -29,9 +29,5 @@ export class CommunityService {
     return this.http.get<Member>(this.baseUrl + 'users/' + username, httpOptions);
   }
 
-  //Post by particular user
-  getPostsByMember(username: string){
-    return this.http.get<Member>(this.baseUrl + 'users/' + username , httpOptions);
-    };
   }
 
