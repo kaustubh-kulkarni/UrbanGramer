@@ -22,7 +22,7 @@ export class CommunityService {
   constructor(private http: HttpClient) { }
 
   getMembers(){
-    return this.http.get(this.baseUrl + 'users', httpOptions);
+    return this.http.get<Member>(this.baseUrl + 'users', httpOptions);
   }
 
   getMember(username: string){

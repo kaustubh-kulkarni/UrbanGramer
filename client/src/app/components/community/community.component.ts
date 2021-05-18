@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Member } from 'src/app/_models/member';
 import { CommunityService } from 'src/app/_services/community.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { CommunityService } from 'src/app/_services/community.service';
   styleUrls: ['./community.component.css']
 })
 export class CommunityComponent implements OnInit {
-  users: any
+  member: Member;
 
   constructor(private communityService: CommunityService) { }
 
@@ -17,7 +18,7 @@ export class CommunityComponent implements OnInit {
 
   loadUsers(){
     this.communityService.getMembers().subscribe(res => {
-      this.users = res;
+      this.member = res;
     })
   }
 

@@ -29,8 +29,7 @@ export class PostEditComponent implements OnInit {
   loadUserPosts(){
    this.communityService.getMember(this.user.username).subscribe(response => {
       this.member = response;
-      console.log(this.member);
-      console.log(this.member.posts);
+      this.posts = this.member.posts;
    });
   }
 
