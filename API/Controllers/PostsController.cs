@@ -63,7 +63,7 @@ namespace API.Controllers
         }
 
         [HttpDelete("delete-post/{postId}")]
-        public async Task<ActionResult<Post>> DeletePost(int postId)
+        public async Task<ActionResult<AppUser>> DeletePost(int postId)
         {
             var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
 

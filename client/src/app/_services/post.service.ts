@@ -32,7 +32,7 @@ export class PostService {
   }
 
   deletePost(postId: number){
-    return this.http.delete<Post>(this.baseUrl + 'posts/delete-post/' + postId, httpOptions);
+    return this.http.delete(this.baseUrl + 'posts/delete-post/' + postId, httpOptions);
   }
 }
 

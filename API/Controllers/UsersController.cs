@@ -51,6 +51,5 @@ namespace API.Controllers
             return await _postRepository.GetPosts(user.Id);
         }
 
-
     }
 }
