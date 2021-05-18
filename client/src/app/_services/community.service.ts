@@ -1,10 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 import { Member } from '../_models/member';
 import { Post } from '../_models/post';
 import { User } from '../_models/user';
+import { AccountService } from './account.service';
 
 const httpOptions={
   headers: new HttpHeaders({
@@ -19,7 +20,11 @@ export class CommunityService {
   baseUrl = 'https://localhost:5001/api/';
   user: User;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private accountService: AccountService) {
+    this.accountService.currentUser$.pipe(take(1)).subscribe(user => {
+      this.user = user;
+   });
+  }
 
   getMembers(){
     return this.http.get<Member>(this.baseUrl + 'users', httpOptions);

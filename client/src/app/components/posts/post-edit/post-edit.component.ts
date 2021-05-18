@@ -15,7 +15,7 @@ import { PostService } from 'src/app/_services/post.service';
 export class PostEditComponent implements OnInit {
   member: Member;
   user: User;
-  posts: any;
+  posts: Post[];
   
 
   constructor(private accountService: AccountService ,private postService: PostService, private communityService: CommunityService) {
@@ -35,7 +35,7 @@ export class PostEditComponent implements OnInit {
 
   deletePost(postId: number){
     this.postService.deletePost(postId).subscribe(() => {
-      this.member.posts = this.member.posts.filter(x => x.id !== postId);
+      this.posts = this.member.posts.filter(x => x.id !== postId);
     });
   }
 
