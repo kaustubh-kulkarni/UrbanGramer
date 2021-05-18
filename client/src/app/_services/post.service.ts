@@ -30,5 +30,9 @@ export class PostService {
   addPost(data : any){
     return this.http.post<Post>(this.baseUrl + 'posts/add-post', data, httpOptions);
   }
+
+  deletePost(postId: number){
+    return this.http.delete<Post>(this.baseUrl + 'posts/delete-post/' + postId, httpOptions);
+  }
 }
 

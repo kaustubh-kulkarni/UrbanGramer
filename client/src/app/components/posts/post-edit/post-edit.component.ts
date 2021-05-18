@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { take } from 'rxjs/operators';
+import { Member } from 'src/app/_models/member';
 import { Post } from 'src/app/_models/post';
 import { User } from 'src/app/_models/user';
 import { AccountService } from 'src/app/_services/account.service';
@@ -12,6 +13,7 @@ import { PostService } from 'src/app/_services/post.service';
   styleUrls: ['./post-edit.component.css']
 })
 export class PostEditComponent implements OnInit {
+  @Input() member: Member;
   user: User;
   posts: any;
   constructor(private accountService: AccountService ,private postService: PostService, private communityService: CommunityService) {
@@ -26,6 +28,12 @@ export class PostEditComponent implements OnInit {
    this.communityService.getPostsByMember(this.user.username).subscribe(response => {
       this.posts = response.posts;
    });
+  }
+
+  deletePost(postId: number){
+    this.postService.deletePost(postId).subscribe(() => {
+      this.member.posts = this.member.posts.filter(x => x.id !== postId);
+    });
   }
 
 }

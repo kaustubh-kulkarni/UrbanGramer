@@ -8,7 +8,7 @@
                 <p class="card-text">{{post.content}}</p>
                 <div class="btn-group d-flex">
                     <button class="btn btn-info ml-2">Edit post</button>
-                    <button class="btn btn-info ml-3">Delete post</button>
+                    <button class="btn btn-info ml-3" (click)="deletePost(post.id)">Delete post</button>
                 </div>
             </div>
         </div>

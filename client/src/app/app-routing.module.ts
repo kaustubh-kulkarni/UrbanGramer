@@ -19,7 +19,7 @@ const routes: Routes = [
       {path: 'posts/:id', component: PostDetailComponent},
       {path: 'my-posts', component: PostEditComponent},
       {path: 'create', component: PostCreateComponent},
-      {path: 'community', component: CommunityComponent},
+      {path: 'members', component: CommunityComponent},
       {path: '**', component: HomeComponent, pathMatch: "full"}
     ]
   }
